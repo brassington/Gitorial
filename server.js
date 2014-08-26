@@ -1,46 +1,49 @@
 var express = require('express');
+var partials = require('express-partials');
 var app = express();
 var GitHubApi = require('github');
+var fs = require('fs');
+var uuid = require('node-uuid');
 
 var port = process.env.PORT || 3000;
 var github = new GitHubApi({
 	version: "3.0.0"
 });
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 app.use('/', express.static(__dirname + '/public'));
+app.use(partials());
 
-// router.param('user', function(req, res, next, id){
-// 	if (err) {
-// 		return next(err);
-// 	}
-// 	else if (!user) {
-// 		return next(new Error('failed to load user'));
-// 	}
 
-// 	req.user = user;
-// 	next();
-// })
+app.get('/:user/:repo', function(req, res) {
+	req.setEncoding('utf8');
+	github.repos.getContent({
+		user: req.params.user,
+		repo: req.params.repo,
+		path: 'TEACHME.js'
+	}, function(error, data) {
+		var body = '';
+		if (error) {
+			console.log(error);
+		}
+		var buffer = new Buffer(data.content, 'base64');
+		var randId = uuid.v4();
+		var tempUrl = '/tmp/'+randId+'.js';
+		fs.writeFile("public"+tempUrl, buffer, function(error){
+			if (error) {
+				console.log(err);
+			} else {
+				console.log("The file was changed.");
+				res.render('index', { layout: true, locals: {
+					scripturl: tempUrl
+				}});
+			}
+		})
+		// res.send(200, parsed);
+	});
 
-// app.get('/:user/:repo', function(req, res) {
-// 	github.repos.getContent({
-// 		headers: {
-//       'Content-Type': 'text/plain'
-// 		},
-// 		user: req.params.user,
-// 		repo: req.params.repo,
-// 		path: 'README.md'
-// 	}, function(error, data) {
-// 		if (error) {
-// 			console.log(error);
-// 		}
-// 		var reader = new FileReader();
-// 		reader.addEventListener("loadend", function() {
-
-// 		});
-//     res.status(200).send(reader.readAsText(data.content));
-// 	});
-  
-// });
+});
 
 app.listen(port);
 

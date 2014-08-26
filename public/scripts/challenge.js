@@ -176,14 +176,14 @@ Challenge.prototype.afterAnswer = function (userAnswer, win) {
     this.container.find('.interro').remove();
     
     if (!userAnswer) {
-        userAnswer = '<img src="./icons/late_gray.png" />';
+        userAnswer = '<img src="/icons/late_gray.png" />';
     }
     
     if (typeof this.answer === 'string') {
         this.answer = "'" + this.answer + "'";
     }
     
-    this.answerContainer.append('<div class="user_answer"><span>' + userAnswer + '</span>' + (win ? '' : '<img class="arrow" src="./icons/arrowfalse.png"><span class="correction">' + this.answer + '</span>') + '</div>');
+    this.answerContainer.append('<div class="user_answer"><span>' + userAnswer + '</span>' + (win ? '' : '<img class="arrow" src="/icons/arrowfalse.png"><span class="correction">' + this.answer + '</span>') + '</div>');
     
     this.answerContainer.find('.correction').fadeIn(750);
     

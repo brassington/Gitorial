@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 						'public/scripts/ext_libs/shBrushJScript.js',
 						'public/scripts/libs/random_tools.js',
 						'public/scripts/challenge.js',
-						'public/scripts/levels.js',
+						// 'public/scripts/levels.js',
 						'public/scripts/mail_form.js',
 						'public/scripts/level_menu.js',
 						'public/scripts/main.js'

@@ -152,7 +152,7 @@ body{
   left: 15px;
   height: 43px;
   width: 22px;
-  background: url(../icons/answer2.png);
+  background: url(/icons/answer2.png);
   transition-property: width;
 }
 
@@ -191,7 +191,7 @@ body{
 
 #mail_form .submit,
 .answer .button{
-  background: url(../icons/submit.png) no-repeat right 50%;
+  background: url(/icons/submit.png) no-repeat right 50%;
   cursor: pointer;
   width: 41px;
 }
@@ -439,11 +439,11 @@ body{
 }
 
 #mail_en{
-  background: url(../icons/gb.png) no-repeat 0 7px;
+  background: url(/icons/gb.png) no-repeat 0 7px;
 }
 
 #mail_fr{
-  background: url(../icons/fr.png) no-repeat 0 7px;
+  background: url(/icons/fr.png) no-repeat 0 7px;
 }
 
 
@@ -482,7 +482,7 @@ body{
 
 
 #mail_form .cancel{
-  background: url(../icons/cancel.png) no-repeat right 50%;
+  background: url(/icons/cancel.png) no-repeat right 50%;
   cursor: pointer;
   width: 41px;
   float: left;
