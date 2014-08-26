@@ -1,0 +1,23 @@
+{
+  "name": "GH-Orial",
+  "version": "0.0.0",
+  "authors": [
+    "J. Andrew Brassington <jabbrass@zoho.com>"
+  ],
+  "description": "For Github repo developers who want to quickly share how to use their APIs.",
+  "main": "main.js",
+  "license": "MIT",
+  "homepage": "http://www.powerofjs.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "SyntaxHighlighter": "~3.0.83",
+    "jquery": "1.11.1"
+  }
+}

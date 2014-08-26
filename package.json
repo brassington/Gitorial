@@ -1,0 +1,23 @@
+{
+  "name": "GH-Orial",
+  "version": "0.0.0",
+  "description": "For Github repo developers who want to quickly share how to use their APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.8.5",
+    "github": "^0.2.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-nodemon": "^0.3.0",
+    "grunt-shell": "^1.0.1"
+  }
+}
