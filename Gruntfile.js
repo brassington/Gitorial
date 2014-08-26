@@ -75,7 +75,7 @@ module.exports = function(grunt) {
   			stderr: true,
   			failOnError: true
   		}
-  	}
+  	},
   	scaleUpServer: {
   		command: 'azure site scale mode standard githuborial',
   		options: {
