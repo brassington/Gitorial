@@ -117,4 +117,8 @@ grunt.registerTask('deploy', [
 	'upload'
 	]);
 
+grunt.registerTask('default', [
+	'build'
+	]);
+
 };
