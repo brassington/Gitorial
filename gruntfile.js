@@ -115,11 +115,9 @@ grunt.registerTask('server-dev', function(target) {
 });
 
 grunt.registerTask('build', [
-	'shell:scaleUpServer',
 	'concat',
   'uglify',
-  'cssmin',
-  'shell:scaleDownServer'
+  'cssmin'
 	]);
 
 grunt.registerTask('buildLocal', [
