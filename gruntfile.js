@@ -76,6 +76,22 @@ module.exports = function(grunt) {
   			failOnError: true
   		}
   	}
+  	scaleUpServer: {
+  		command: 'azure site scale mode standard githuborial',
+  		options: {
+  			stdout: true,
+  			stderr: true,
+  			failOnError: true
+  		}
+  	},
+  	scaleDownServer: {
+  		command: 'azure site scale mode free githuborial',
+  		options: {
+  			stdout: true,
+  			stderr: true,
+  			failOnError: true
+  		}
+  	}
   }
 });
 
@@ -99,6 +115,14 @@ grunt.registerTask('server-dev', function(target) {
 });
 
 grunt.registerTask('build', [
+	'shell:scaleUpServer',
+	'concat',
+  'uglify',
+  'cssmin',
+  'shell:scaleDownServer'
+	]);
+
+grunt.registerTask('buildLocal', [
 	'concat',
   'uglify',
   'cssmin'
