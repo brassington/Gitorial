@@ -1,4 +1,4 @@
-# GitHuborial #
+# Gitorial #
   > For Github repo developers who want to quickly share how to use their APIs.
 
 ## Summary ##
